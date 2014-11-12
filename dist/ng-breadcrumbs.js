@@ -48,6 +48,10 @@
               this.breadcrumbs = [];
               params = $route.current.params;
               pathElements = $route.current.originalPath.trim().split('/');
+              
+              if (pathElements.length === 2 && pathElements[1] === '') {
+                  pathElements.splice(1,1);
+              }
 
               // Necessary to get rid of of duplicate empty string on root path
               if (pathElements[1] === '') {
