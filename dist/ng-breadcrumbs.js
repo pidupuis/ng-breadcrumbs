@@ -55,7 +55,7 @@
               }
 
               angular.forEach(pathElements, function(pathElement, index) {
-                param = pathElement[0] === ':' &&
+                param = pathElement !== undefined && pathElement[0] === ':' &&
                         typeof params[pathElement
                           .slice(1, pathElement.length)] !== 'undefined' ?
                         params[pathElement.slice(1, pathElement.length)] :
